@@ -52,6 +52,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/PixelArt/SpriteAnimator.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Services/CopilotSessionPoller.swift"
         },
         {
@@ -61,6 +65,18 @@
         {
           "kind" : "file",
           "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Services/SQLiteReader.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Views/AgentCharacterView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Views/AgentDetailPopover.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Views/StatusBubbleView.swift"
         },
         {
           "kind" : "file",
@@ -89,9 +105,13 @@
         "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentInfo.swift.o",
         "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentSprite.swift.o",
         "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/PixelGrid.swift.o",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/SpriteAnimator.swift.o",
         "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/CopilotSessionPoller.swift.o",
         "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/EventStreamParser.swift.o",
         "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/SQLiteReader.swift.o",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentCharacterView.swift.o",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentDetailPopover.swift.o",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/StatusBubbleView.swift.o",
         "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/DockPositionManager.swift.o",
         "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/OverlayPanel.swift.o"
       ],
@@ -166,6 +186,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/SpriteAnimator.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/CopilotSessionPoller.swift.o"
         },
         {
@@ -175,6 +199,18 @@
         {
           "kind" : "file",
           "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/SQLiteReader.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentCharacterView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentDetailPopover.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/StatusBubbleView.swift.o"
         },
         {
           "kind" : "file",
@@ -197,9 +233,13 @@
         "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Models/AgentInfo.swift",
         "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/PixelArt/AgentSprite.swift",
         "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/PixelArt/PixelGrid.swift",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/PixelArt/SpriteAnimator.swift",
         "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Services/CopilotSessionPoller.swift",
         "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Services/EventStreamParser.swift",
         "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Services/SQLiteReader.swift",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Views/AgentCharacterView.swift",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Views/AgentDetailPopover.swift",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Views/StatusBubbleView.swift",
         "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Window/DockPositionManager.swift",
         "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Window/OverlayPanel.swift"
       ],
@@ -421,9 +461,13 @@
       "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Models/AgentInfo.swift",
       "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/PixelArt/AgentSprite.swift",
       "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/PixelArt/PixelGrid.swift",
+      "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/PixelArt/SpriteAnimator.swift",
       "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Services/CopilotSessionPoller.swift",
       "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Services/EventStreamParser.swift",
       "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Services/SQLiteReader.swift",
+      "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Views/AgentCharacterView.swift",
+      "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Views/AgentDetailPopover.swift",
+      "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Views/StatusBubbleView.swift",
       "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Window/DockPositionManager.swift",
       "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Window/OverlayPanel.swift",
       "-I",
@@ -663,6 +707,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/PixelArt/SpriteAnimator.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Services/CopilotSessionPoller.swift"
         },
         {
@@ -672,6 +720,18 @@
         {
           "kind" : "file",
           "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Services/SQLiteReader.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Views/AgentCharacterView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Views/AgentDetailPopover.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Views/StatusBubbleView.swift"
         },
         {
           "kind" : "file",
@@ -693,7 +753,15 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentCharacterView.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentColor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentDetailPopover.swift.o"
         },
         {
           "kind" : "file",
@@ -734,6 +802,14 @@
         {
           "kind" : "file",
           "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/SQLiteReader.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/SpriteAnimator.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/StatusBubbleView.swift.o"
         }
       ],
       "outputFilePath" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.product/Objects.LinkFileList"
@@ -761,7 +837,15 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentCharacterView.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentColor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentDetailPopover.swift.o"
         },
         {
           "kind" : "file",
@@ -802,6 +886,14 @@
         {
           "kind" : "file",
           "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/SQLiteReader.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/SpriteAnimator.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/StatusBubbleView.swift.o"
         },
         {
           "kind" : "file",
