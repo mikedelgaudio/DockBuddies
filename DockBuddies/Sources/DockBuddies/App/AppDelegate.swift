@@ -35,7 +35,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     private func setupOverlayPanel() {
-        let frame = dockManager.overlayFrame(agentCount: 4)
+        let agentCount = max(poller.activeAgents.count, 1)
+        let frame = dockManager.overlayFrame(agentCount: agentCount)
         overlayPanel = OverlayPanel(contentRect: frame)
 
         let overlayView = AgentOverlayView(poller: poller)

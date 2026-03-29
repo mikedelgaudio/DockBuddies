@@ -6,10 +6,7 @@ final class CopilotSessionPoller: ObservableObject {
 
     private var timer: AnyCancellable?
     private let copilotDir: URL
-    private let maxAgents: Int
-
-    init(maxAgents: Int = 4) {
-        self.maxAgents = maxAgents
+    init() {
         self.copilotDir = FileManager.default.homeDirectoryForCurrentUser
             .appendingPathComponent(".copilot")
     }
@@ -70,7 +67,7 @@ final class CopilotSessionPoller: ObservableObject {
         let colors = AgentColor.allCases
         var agents: [AgentInfo] = []
 
-        for (index, session) in activeSessions.prefix(maxAgents).enumerated() {
+        for (index, session) in activeSessions.enumerated() {
             let rows = db?.query(
                 "SELECT id, cwd, repository, branch, summary, updated_at FROM sessions WHERE id = ?",
                 params: [session.uuid]

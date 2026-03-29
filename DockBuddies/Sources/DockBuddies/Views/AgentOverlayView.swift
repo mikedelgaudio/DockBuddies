@@ -43,7 +43,7 @@ struct AgentOverlayView: View {
                 color: .teal
             )]
         }
-        return Array(active.prefix(4))
+        return active
     }
 }
 

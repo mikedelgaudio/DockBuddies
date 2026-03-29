@@ -93,7 +93,7 @@ final class DockPositionManager: ObservableObject {
 
     func refresh() {
         dockPosition = detectDockPosition()
-        currentOverlayFrame = overlayFrame(agentCount: 4)
+        currentOverlayFrame = overlayFrame(agentCount: 1)
     }
 
     private func observeScreenChanges() {
