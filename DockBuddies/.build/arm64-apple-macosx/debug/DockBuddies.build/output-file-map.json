@@ -86,6 +86,13 @@
     "swift-dependencies": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentDetailPopover.swiftdeps",
     "diagnostics": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentDetailPopover.dia"
   },
+  "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Views/AgentOverlayView.swift": {
+    "dependencies": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentOverlayView.d",
+    "object": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentOverlayView.swift.o",
+    "swiftmodule": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentOverlayView~partial.swiftmodule",
+    "swift-dependencies": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentOverlayView.swiftdeps",
+    "diagnostics": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentOverlayView.dia"
+  },
   "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Views/StatusBubbleView.swift": {
     "dependencies": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/StatusBubbleView.d",
     "object": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/StatusBubbleView.swift.o",

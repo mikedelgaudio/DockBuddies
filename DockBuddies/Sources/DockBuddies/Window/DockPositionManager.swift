@@ -77,6 +77,20 @@ final class DockPositionManager: ObservableObject {
         }
     }
 
+    /// Check if dock is set to auto-hide
+    var isDockAutoHidden: Bool {
+        let process = Process()
+        process.executableURL = URL(fileURLWithPath: "/usr/bin/defaults")
+        process.arguments = ["read", "com.apple.dock", "autohide"]
+        let pipe = Pipe()
+        process.standardOutput = pipe
+        process.standardError = pipe
+        try? process.run()
+        process.waitUntilExit()
+        let output = String(data: pipe.fileHandleForReading.readDataToEndOfFile(), encoding: .utf8)
+        return output?.trimmingCharacters(in: .whitespacesAndNewlines) == "1"
+    }
+
     func refresh() {
         dockPosition = detectDockPosition()
         currentOverlayFrame = overlayFrame(agentCount: 4)

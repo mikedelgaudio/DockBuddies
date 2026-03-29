@@ -10,6 +10,7 @@
 /Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Services/SQLiteReader.swift
 /Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Views/AgentCharacterView.swift
 /Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Views/AgentDetailPopover.swift
+/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Views/AgentOverlayView.swift
 /Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Views/StatusBubbleView.swift
 /Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Window/DockPositionManager.swift
 /Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Window/OverlayPanel.swift
