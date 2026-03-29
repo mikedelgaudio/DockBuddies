@@ -1,0 +1,258 @@
+{
+  "builtTestProducts" : [
+
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.DockBuddies-arm64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Library/Developer/CommandLineTools/usr/bin/swiftc",
+      "fileList" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/sources",
+      "importPath" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/App/AppDelegate.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/App/DockBuddiesApp.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/sources"
+        }
+      ],
+      "isLibrary" : false,
+      "moduleName" : "DockBuddies",
+      "moduleOutputPath" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/Modules/DockBuddies.swiftmodule",
+      "objects" : [
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AppDelegate.swift.o",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/DockBuddiesApp.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j8",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-Xfrontend",
+        "-entry-point-function-name",
+        "-Xfrontend",
+        "DockBuddies_main",
+        "-swift-version",
+        "5",
+        "-I",
+        "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+        "-L",
+        "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+        "-plugin-path",
+        "/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "dockbuddies"
+      ],
+      "outputFileMapPath" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AppDelegate.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/DockBuddiesApp.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/Modules/DockBuddies.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/App/AppDelegate.swift",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/App/DockBuddiesApp.swift"
+      ],
+      "tempsPath" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "DockBuddies" : [
+      "/Library/Developer/CommandLineTools/usr/bin/swiftc",
+      "-module-name",
+      "DockBuddies",
+      "-package-name",
+      "dockbuddies",
+      "-c",
+      "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/App/AppDelegate.swift",
+      "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/App/DockBuddiesApp.swift",
+      "-I",
+      "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j8",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-Xfrontend",
+      "-entry-point-function-name",
+      "-Xfrontend",
+      "DockBuddies_main",
+      "-swift-version",
+      "5",
+      "-I",
+      "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+      "-L",
+      "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+      "-plugin-path",
+      "/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "dockbuddies",
+      "-driver-use-frontend-path",
+      "/Library/Developer/CommandLineTools/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "DockBuddies" : [
+
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+
+  },
+  "traitConfiguration" : {
+    "default" : {
+
+    }
+  },
+  "writeCommands" : {
+    "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies-entitlement.plist" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<entitlement-plist>"
+        },
+        {
+          "kind" : "virtual",
+          "name" : "<com.apple.security.get-task-allow>"
+        }
+      ],
+      "outputFilePath" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies-entitlement.plist"
+    },
+    "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/App/AppDelegate.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/App/DockBuddiesApp.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/sources"
+    },
+    "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AppDelegate.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/DockBuddiesApp.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.product/Objects.LinkFileList"
+    },
+    "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Library/Developer/CommandLineTools/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"
+    }
+  }
+}

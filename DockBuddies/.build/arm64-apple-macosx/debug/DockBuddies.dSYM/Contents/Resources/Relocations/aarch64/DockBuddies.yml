@@ -1,0 +1,67 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies'
+relocations:
+  - { offset: 0xEA59A, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies11AppDelegateC10statusItem33_2A23502A74D4A9C79EDBC6F791D09AC6LLSo08NSStatusF0CSgvpfi', symObjAddr: 0x0, symBinAddr: 0x100001218, symSize: 0x8 }
+  - { offset: 0xEA5B2, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies11AppDelegateC10statusItem33_2A23502A74D4A9C79EDBC6F791D09AC6LLSo08NSStatusF0CSgvpfi', symObjAddr: 0x0, symBinAddr: 0x100001218, symSize: 0x8 }
+  - { offset: 0xEA6E8, size: 0x8, addend: 0x0, symName: '_$sSo12NSStatusItemCSgWOh', symObjAddr: 0x504, symBinAddr: 0x10000171C, symSize: 0x30 }
+  - { offset: 0xEA6FC, size: 0x8, addend: 0x0, symName: '_$sSo6NSMenuCMa', symObjAddr: 0x534, symBinAddr: 0x10000174C, symSize: 0x60 }
+  - { offset: 0xEA710, size: 0x8, addend: 0x0, symName: '_$sSo10NSMenuItemCMa', symObjAddr: 0x6A8, symBinAddr: 0x1000018C0, symSize: 0x60 }
+  - { offset: 0xEA724, size: 0x8, addend: 0x0, symName: '_$sSo7NSImageCMa', symObjAddr: 0x764, symBinAddr: 0x10000197C, symSize: 0x60 }
+  - { offset: 0xEA738, size: 0x8, addend: 0x0, symName: ___swift_project_boxed_opaque_existential_0, symObjAddr: 0xA84, symBinAddr: 0x100001C9C, symSize: 0x4C }
+  - { offset: 0xEA74C, size: 0x8, addend: 0x0, symName: ___swift_destroy_boxed_opaque_existential_0, symObjAddr: 0xAD0, symBinAddr: 0x100001CE8, symSize: 0x60 }
+  - { offset: 0xEA760, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies11AppDelegateCMa', symObjAddr: 0xC2C, symBinAddr: 0x100001E44, symSize: 0x24 }
+  - { offset: 0xEA774, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies11AppDelegateCfETo', symObjAddr: 0xCB8, symBinAddr: 0x100001ED0, symSize: 0x30 }
+  - { offset: 0xEA7EB, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies11AppDelegateC10statusItem33_2A23502A74D4A9C79EDBC6F791D09AC6LLSo08NSStatusF0CSgvg', symObjAddr: 0x8, symBinAddr: 0x100001220, symSize: 0x6C }
+  - { offset: 0xEA816, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies11AppDelegateC10statusItem33_2A23502A74D4A9C79EDBC6F791D09AC6LLSo08NSStatusF0CSgvs', symObjAddr: 0x74, symBinAddr: 0x10000128C, symSize: 0x94 }
+  - { offset: 0xEA849, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies11AppDelegateC10statusItem33_2A23502A74D4A9C79EDBC6F791D09AC6LLSo08NSStatusF0CSgvM', symObjAddr: 0x108, symBinAddr: 0x100001320, symSize: 0x50 }
+  - { offset: 0xEA86D, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies11AppDelegateC10statusItem33_2A23502A74D4A9C79EDBC6F791D09AC6LLSo08NSStatusF0CSgvM.resume.0', symObjAddr: 0x158, symBinAddr: 0x100001370, symSize: 0x3C }
+  - { offset: 0xEA8A0, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies11AppDelegateC29applicationDidFinishLaunchingyy10Foundation12NotificationVF', symObjAddr: 0x194, symBinAddr: 0x1000013AC, symSize: 0x370 }
+  - { offset: 0xEAA05, size: 0x8, addend: 0x0, symName: '_$sSo7NSImageC16systemSymbolName24accessibilityDescriptionABSgSS_SSSgtcfCTO', symObjAddr: 0x594, symBinAddr: 0x1000017AC, symSize: 0xE8 }
+  - { offset: 0xEAA20, size: 0x8, addend: 0x0, symName: '_$sSo6NSMenuCABycfC', symObjAddr: 0x67C, symBinAddr: 0x100001894, symSize: 0x2C }
+  - { offset: 0xEAA3B, size: 0x8, addend: 0x0, symName: '_$sSo10NSMenuItemC5title6action13keyEquivalentABSS_10ObjectiveC8SelectorVSgSStcfC', symObjAddr: 0x708, symBinAddr: 0x100001920, symSize: 0x5C }
+  - { offset: 0xEAA68, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies11AppDelegateC29applicationDidFinishLaunchingyy10Foundation12NotificationVFTo', symObjAddr: 0x7C4, symBinAddr: 0x1000019DC, symSize: 0xE0 }
+  - { offset: 0xEAA7C, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies11AppDelegateC4quit33_2A23502A74D4A9C79EDBC6F791D09AC6LLyyF', symObjAddr: 0x8A4, symBinAddr: 0x100001ABC, symSize: 0x1E0 }
+  - { offset: 0xEAAA0, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies11AppDelegateC4quit33_2A23502A74D4A9C79EDBC6F791D09AC6LLyyFTo', symObjAddr: 0xB30, symBinAddr: 0x100001D48, symSize: 0x4C }
+  - { offset: 0xEAABB, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies11AppDelegateCACycfC', symObjAddr: 0xB7C, symBinAddr: 0x100001D94, symSize: 0x24 }
+  - { offset: 0xEAACF, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies11AppDelegateCACycfc', symObjAddr: 0xBA0, symBinAddr: 0x100001DB8, symSize: 0x8C }
+  - { offset: 0xEAAF3, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies11AppDelegateCACycfcTo', symObjAddr: 0xC50, symBinAddr: 0x100001E68, symSize: 0x20 }
+  - { offset: 0xEAB07, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies11AppDelegateCfD', symObjAddr: 0xC70, symBinAddr: 0x100001E88, symSize: 0x48 }
+  - { offset: 0xEAB2B, size: 0x8, addend: 0x0, symName: '_$sSo6NSMenuCABycfcTO', symObjAddr: 0xCE8, symBinAddr: 0x100001F00, symSize: 0x20 }
+  - { offset: 0xEAB3F, size: 0x8, addend: 0x0, symName: '_$sSo10NSMenuItemC5title6action13keyEquivalentABSS_10ObjectiveC8SelectorVSgSStcfcTO', symObjAddr: 0xD08, symBinAddr: 0x100001F20, symSize: 0xA0 }
+  - { offset: 0xEAC35, size: 0x8, addend: 0x0, symName: _NSSquareStatusItemLength, symObjAddr: 0xDA8, symBinAddr: 0x100003150, symSize: 0x0 }
+  - { offset: 0xEAC78, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies0aB3AppV11appDelegateAA0cE0Cvg', symObjAddr: 0x0, symBinAddr: 0x100001FC0, symSize: 0xC0 }
+  - { offset: 0xEAD81, size: 0x8, addend: 0x0, symName: ___swift_instantiateConcreteTypeFromMangledNameV2, symObjAddr: 0xC0, symBinAddr: 0x100002080, symSize: 0x80 }
+  - { offset: 0xEAD95, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies0aB3AppV12_appDelegate33_0133C7E8C566A64A1A8E09229563ED42LL7SwiftUI013NSApplicationE7AdaptorVyAA0cE0CGvpfi', symObjAddr: 0x140, symBinAddr: 0x100002100, symSize: 0x34 }
+  - { offset: 0xEADAD, size: 0x8, addend: 0x0, symName: '_$s7SwiftUI8SettingsVyAA9EmptyViewVGACyxGAA5SceneAAWl', symObjAddr: 0x4EC, symBinAddr: 0x1000024AC, symSize: 0x74 }
+  - { offset: 0xEADC1, size: 0x8, addend: 0x0, symName: ___swift_instantiateConcreteTypeFromMangledNameAbstractV2, symObjAddr: 0x560, symBinAddr: 0x100002520, symSize: 0x78 }
+  - { offset: 0xEADD5, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies0aB3AppVMa', symObjAddr: 0x60C, symBinAddr: 0x1000025CC, symSize: 0x60 }
+  - { offset: 0xEADE9, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies0aB3AppVAC7SwiftUI0C0AAWl', symObjAddr: 0x66C, symBinAddr: 0x10000262C, symSize: 0x6C }
+  - { offset: 0xEADFD, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies0aB3AppVWOb', symObjAddr: 0x768, symBinAddr: 0x100002728, symSize: 0x50 }
+  - { offset: 0xEAE11, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies0aB3AppV11appDelegateAC7SwiftUI013NSApplicationE7AdaptorVyAA0cE0CG_tcfcfA_', symObjAddr: 0x7B8, symBinAddr: 0x100002778, symSize: 0x34 }
+  - { offset: 0xEAE2F, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies0aB3AppV7SwiftUI0C0AA4BodyAdEP_AD5ScenePWT', symObjAddr: 0x878, symBinAddr: 0x100002838, symSize: 0x24 }
+  - { offset: 0xEAE43, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies0aB3AppVwCP', symObjAddr: 0x89C, symBinAddr: 0x10000285C, symSize: 0x4C }
+  - { offset: 0xEAE57, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies0aB3AppVwxx', symObjAddr: 0x8E8, symBinAddr: 0x1000028A8, symSize: 0x44 }
+  - { offset: 0xEAE6B, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies0aB3AppVwcp', symObjAddr: 0x92C, symBinAddr: 0x1000028EC, symSize: 0x50 }
+  - { offset: 0xEAE7F, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies0aB3AppVwca', symObjAddr: 0x97C, symBinAddr: 0x10000293C, symSize: 0x50 }
+  - { offset: 0xEAE93, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies0aB3AppVwtk', symObjAddr: 0x9CC, symBinAddr: 0x10000298C, symSize: 0x50 }
+  - { offset: 0xEAEA7, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies0aB3AppVwta', symObjAddr: 0xA1C, symBinAddr: 0x1000029DC, symSize: 0x50 }
+  - { offset: 0xEAEBB, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies0aB3AppVwet', symObjAddr: 0xA6C, symBinAddr: 0x100002A2C, symSize: 0x1C }
+  - { offset: 0xEAECF, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies0aB3AppVwst', symObjAddr: 0xAD4, symBinAddr: 0x100002A94, symSize: 0x1C }
+  - { offset: 0xEAEE3, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies0aB3AppVMr', symObjAddr: 0xB40, symBinAddr: 0x100002B00, symSize: 0x94 }
+  - { offset: 0xEAEF7, size: 0x8, addend: 0x0, symName: '_$s7SwiftUI28NSApplicationDelegateAdaptorVy11DockBuddies03AppD0CGMa', symObjAddr: 0xBD4, symBinAddr: 0x100002B94, symSize: 0x98 }
+  - { offset: 0xEAF0C, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies0aB3AppV11appDelegateAA0cE0Cvg', symObjAddr: 0x0, symBinAddr: 0x100001FC0, symSize: 0xC0 }
+  - { offset: 0xEAF64, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies0aB3AppV12_appDelegate33_0133C7E8C566A64A1A8E09229563ED42LL7SwiftUI013NSApplicationE7AdaptorVyAA0cE0CGvg', symObjAddr: 0x174, symBinAddr: 0x100002134, symSize: 0x4C }
+  - { offset: 0xEAF7F, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies0aB3AppV12_appDelegate33_0133C7E8C566A64A1A8E09229563ED42LL7SwiftUI013NSApplicationE7AdaptorVyAA0cE0CGvs', symObjAddr: 0x1C0, symBinAddr: 0x100002180, symSize: 0xB0 }
+  - { offset: 0xEAF9A, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies0aB3AppV4bodyQrvg', symObjAddr: 0x270, symBinAddr: 0x100002230, symSize: 0x158 }
+  - { offset: 0xEAFBE, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies0aB3AppV4bodyQrvg7SwiftUI9EmptyViewVyXEfU_', symObjAddr: 0x3C8, symBinAddr: 0x100002388, symSize: 0x58 }
+  - { offset: 0xEB02F, size: 0x8, addend: 0x0, symName: '_$s7SwiftUI11ViewBuilderV15buildExpressionyxxAA0C0RzlFZ', symObjAddr: 0x420, symBinAddr: 0x1000023E0, symSize: 0x44 }
+  - { offset: 0xEB051, size: 0x8, addend: 0x0, symName: '_$s7SwiftUI11ViewBuilderV10buildBlockyxxAA0C0RzlFZ', symObjAddr: 0x464, symBinAddr: 0x100002424, symSize: 0x44 }
+  - { offset: 0xEB07A, size: 0x8, addend: 0x0, symName: '_$s7SwiftUI12SceneBuilderV15buildExpressionyxxAA0C0RzlFZ', symObjAddr: 0x4A8, symBinAddr: 0x100002468, symSize: 0x44 }
+  - { offset: 0xEB0A8, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies0aB3AppV5$mainyyFZ', symObjAddr: 0x5D8, symBinAddr: 0x100002598, symSize: 0x34 }
+  - { offset: 0xEB0C8, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies0aB3AppVACycfC', symObjAddr: 0x6D8, symBinAddr: 0x100002698, symSize: 0x90 }
+  - { offset: 0xEB0ED, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies0aB3AppV11appDelegateAC7SwiftUI013NSApplicationE7AdaptorVyAA0cE0CG_tcfC', symObjAddr: 0x7EC, symBinAddr: 0x1000027AC, symSize: 0x4C }
+  - { offset: 0xEB101, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies0aB3AppV7SwiftUI0C0AadEP4body4BodyQzvgTW', symObjAddr: 0x838, symBinAddr: 0x1000027F8, symSize: 0x14 }
+  - { offset: 0xEB11C, size: 0x8, addend: 0x0, symName: '_$s11DockBuddies0aB3AppV7SwiftUI0C0AadEPxycfCTW', symObjAddr: 0x84C, symBinAddr: 0x10000280C, symSize: 0x14 }
+  - { offset: 0xEB149, size: 0x8, addend: 0x0, symName: _DockBuddies_main, symObjAddr: 0x860, symBinAddr: 0x100002820, symSize: 0x18 }
+...

@@ -1,0 +1,81 @@
+client:
+  name: basic
+  file-system: device-agnostic
+tools: {}
+targets:
+  "DockBuddies-arm64-apple-macosx15.0-debug.exe": ["<DockBuddies-arm64-apple-macosx15.0-debug.exe>"]
+  "DockBuddies-arm64-apple-macosx15.0-debug.module": ["<DockBuddies-arm64-apple-macosx15.0-debug.module>"]
+  "PackageStructure": ["<PackageStructure>"]
+  "main": ["<DockBuddies-arm64-apple-macosx15.0-debug.exe>","<DockBuddies-arm64-apple-macosx15.0-debug.module>"]
+  "test": ["<DockBuddies-arm64-apple-macosx15.0-debug.exe>","<DockBuddies-arm64-apple-macosx15.0-debug.module>"]
+default: "main"
+nodes:
+  "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+  "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies":
+    is-mutated: true
+commands:
+  "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies-entitlement.plist":
+    tool: write-auxiliary-file
+    inputs: ["<entitlement-plist>","<com.apple.security.get-task-allow>"]
+    outputs: ["/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies-entitlement.plist"]
+    description: "Write auxiliary file /Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies-entitlement.plist"
+
+  "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/App/AppDelegate.swift","/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/App/DockBuddiesApp.swift"]
+    outputs: ["/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/sources"]
+    description: "Write auxiliary file /Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/sources"
+
+  "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.product/Objects.LinkFileList":
+    tool: write-auxiliary-file
+    inputs: ["<link-file-list>","/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AppDelegate.swift.o","/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/DockBuddiesApp.swift.o"]
+    outputs: ["/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.product/Objects.LinkFileList"]
+    description: "Write auxiliary file /Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.product/Objects.LinkFileList"
+
+  "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt":
+    tool: write-auxiliary-file
+    inputs: ["<swift-get-version>","/Library/Developer/CommandLineTools/usr/bin/swiftc"]
+    outputs: ["/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"]
+    always-out-of-date: "true"
+    description: "Write auxiliary file /Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"
+
+  "<DockBuddies-arm64-apple-macosx15.0-debug.exe>":
+    tool: phony
+    inputs: ["<DockBuddies-arm64-apple-macosx15.0-debug.exe-CodeSigning>"]
+    outputs: ["<DockBuddies-arm64-apple-macosx15.0-debug.exe>"]
+
+  "<DockBuddies-arm64-apple-macosx15.0-debug.module>":
+    tool: phony
+    inputs: ["/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AppDelegate.swift.o","/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/DockBuddiesApp.swift.o","/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/Modules/DockBuddies.swiftmodule"]
+    outputs: ["<DockBuddies-arm64-apple-macosx15.0-debug.module>"]
+
+  "C.DockBuddies-arm64-apple-macosx15.0-debug.exe":
+    tool: shell
+    inputs: ["/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AppDelegate.swift.o","/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/DockBuddiesApp.swift.o","/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.product/Objects.LinkFileList"]
+    outputs: ["/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies"]
+    description: "Linking ./.build/arm64-apple-macosx/debug/DockBuddies"
+    args: ["/Library/Developer/CommandLineTools/usr/bin/swiftc","-L","/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug","-o","/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies","-module-name","DockBuddies","-Xlinker","-no_warn_duplicate_libraries","-emit-executable","-Xlinker","-alias","-Xlinker","_DockBuddies_main","-Xlinker","_main","-Xlinker","-rpath","-Xlinker","@loader_path","@/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.product/Objects.LinkFileList","-Xlinker","-rpath","-Xlinker","/Library/Developer/CommandLineTools/usr/lib/swift-6.2/macosx","-target","arm64-apple-macosx14.0","-Xlinker","-add_ast_path","-Xlinker","/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/Modules/DockBuddies.swiftmodule","-I","/Library/Developer/CommandLineTools/Library/Developer/Frameworks","-L","/Library/Developer/CommandLineTools/Library/Developer/Frameworks","-plugin-path","/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing","-sdk","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-g"]
+
+  "C.DockBuddies-arm64-apple-macosx15.0-debug.exe-entitlements":
+    tool: shell
+    inputs: ["/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies","/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies-entitlement.plist"]
+    outputs: ["<DockBuddies-arm64-apple-macosx15.0-debug.exe-CodeSigning>"]
+    description: "Applying debug entitlements to ./.build/arm64-apple-macosx/debug/DockBuddies"
+    args: ["codesign","--force","--sign","-","--entitlements","/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies-entitlement.plist","/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies"]
+
+  "C.DockBuddies-arm64-apple-macosx15.0-debug.module":
+    tool: shell
+    inputs: ["/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/App/AppDelegate.swift","/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/App/DockBuddiesApp.swift","/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt","/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/sources"]
+    outputs: ["/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AppDelegate.swift.o","/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/DockBuddiesApp.swift.o","/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/Modules/DockBuddies.swiftmodule"]
+    description: "Compiling Swift Module 'DockBuddies' (2 sources)"
+    args: ["/Library/Developer/CommandLineTools/usr/bin/swiftc","-module-name","DockBuddies","-emit-dependencies","-emit-module","-emit-module-path","/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/Modules/DockBuddies.swiftmodule","-output-file-map","/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/output-file-map.json","-incremental","-c","@/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/sources","-I","/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/Modules","-target","arm64-apple-macosx14.0","-incremental","-enable-batch-mode","-serialize-diagnostics","-index-store-path","/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-j8","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE","-module-cache-path","/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-Xfrontend","-entry-point-function-name","-Xfrontend","DockBuddies_main","-swift-version","5","-I","/Library/Developer/CommandLineTools/Library/Developer/Frameworks","-L","/Library/Developer/CommandLineTools/Library/Developer/Frameworks","-plugin-path","/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing","-sdk","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-g","-Xcc","-isysroot","-Xcc","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-Xcc","-fPIC","-Xcc","-g","-package-name","dockbuddies"]
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/","/Users/mikedelgaudio/GitHub/silly/DockBuddies/Package.swift","/Users/mikedelgaudio/GitHub/silly/DockBuddies/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+

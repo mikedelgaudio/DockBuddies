@@ -1,0 +1,19 @@
+{
+  "": {
+    "swift-dependencies": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/master.swiftdeps"
+  },
+  "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/App/AppDelegate.swift": {
+    "dependencies": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AppDelegate.d",
+    "object": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AppDelegate.swift.o",
+    "swiftmodule": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AppDelegate~partial.swiftmodule",
+    "swift-dependencies": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AppDelegate.swiftdeps",
+    "diagnostics": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AppDelegate.dia"
+  },
+  "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/App/DockBuddiesApp.swift": {
+    "dependencies": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/DockBuddiesApp.d",
+    "object": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/DockBuddiesApp.swift.o",
+    "swiftmodule": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/DockBuddiesApp~partial.swiftmodule",
+    "swift-dependencies": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/DockBuddiesApp.swiftdeps",
+    "diagnostics": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/DockBuddiesApp.dia"
+  }
+}
