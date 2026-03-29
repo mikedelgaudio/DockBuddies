@@ -1,6 +1,10 @@
 {
   "builtTestProducts" : [
-
+    {
+      "binaryPath" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesPackageTests.xctest/Contents/MacOS/DockBuddiesPackageTests",
+      "packagePath" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies",
+      "productName" : "DockBuddiesPackageTests"
+    }
   ],
   "copyCommands" : {
 
@@ -32,6 +36,42 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Models/AgentColor.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Models/AgentInfo.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/PixelArt/AgentSprite.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/PixelArt/PixelGrid.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Services/CopilotSessionPoller.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Services/EventStreamParser.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Services/SQLiteReader.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Window/DockPositionManager.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Window/OverlayPanel.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"
         },
         {
@@ -44,7 +84,16 @@
       "moduleOutputPath" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/Modules/DockBuddies.swiftmodule",
       "objects" : [
         "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AppDelegate.swift.o",
-        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/DockBuddiesApp.swift.o"
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/DockBuddiesApp.swift.o",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentColor.swift.o",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentInfo.swift.o",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentSprite.swift.o",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/PixelGrid.swift.o",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/CopilotSessionPoller.swift.o",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/EventStreamParser.swift.o",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/SQLiteReader.swift.o",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/DockPositionManager.swift.o",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/OverlayPanel.swift.o"
       ],
       "otherArguments" : [
         "-target",
@@ -101,15 +150,257 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentColor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentInfo.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentSprite.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/PixelGrid.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/CopilotSessionPoller.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/EventStreamParser.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/SQLiteReader.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/DockPositionManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/OverlayPanel.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/Modules/DockBuddies.swiftmodule"
         }
       ],
       "prepareForIndexing" : false,
       "sources" : [
         "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/App/AppDelegate.swift",
-        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/App/DockBuddiesApp.swift"
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/App/DockBuddiesApp.swift",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Models/AgentColor.swift",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Models/AgentInfo.swift",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/PixelArt/AgentSprite.swift",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/PixelArt/PixelGrid.swift",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Services/CopilotSessionPoller.swift",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Services/EventStreamParser.swift",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Services/SQLiteReader.swift",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Window/DockPositionManager.swift",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Window/OverlayPanel.swift"
       ],
       "tempsPath" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.DockBuddiesPackageTests-arm64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Library/Developer/CommandLineTools/usr/bin/swiftc",
+      "fileList" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesPackageTests.build/sources",
+      "importPath" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesPackageTests.derived/runner.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/Modules/DockBuddiesTests.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesPackageTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "DockBuddiesPackageTests",
+      "moduleOutputPath" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/Modules/DockBuddiesPackageTests.swiftmodule",
+      "objects" : [
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesPackageTests.build/runner.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j8",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesPackageTests.build/include/DockBuddiesPackageTests-Swift.h",
+        "-I",
+        "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+        "-L",
+        "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+        "-plugin-path",
+        "/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "dockbuddies"
+      ],
+      "outputFileMapPath" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesPackageTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesPackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/Modules/DockBuddiesPackageTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesPackageTests.derived/runner.swift"
+      ],
+      "tempsPath" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesPackageTests.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.DockBuddiesTests-arm64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Library/Developer/CommandLineTools/usr/bin/swiftc",
+      "fileList" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesTests.build/sources",
+      "importPath" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Tests/DockBuddiesTests/AgentSpriteTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Tests/DockBuddiesTests/CopilotSessionPollerTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Tests/DockBuddiesTests/DockPositionManagerTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "DockBuddiesTests",
+      "moduleOutputPath" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/Modules/DockBuddiesTests.swiftmodule",
+      "objects" : [
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesTests.build/AgentSpriteTests.swift.o",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesTests.build/CopilotSessionPollerTests.swift.o",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesTests.build/DockPositionManagerTests.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j8",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-swift-version",
+        "5",
+        "-I",
+        "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+        "-L",
+        "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+        "-plugin-path",
+        "/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "dockbuddies"
+      ],
+      "outputFileMapPath" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesTests.build/AgentSpriteTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesTests.build/CopilotSessionPollerTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesTests.build/DockPositionManagerTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/Modules/DockBuddiesTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Tests/DockBuddiesTests/AgentSpriteTests.swift",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Tests/DockBuddiesTests/CopilotSessionPollerTests.swift",
+        "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Tests/DockBuddiesTests/DockPositionManagerTests.swift"
+      ],
+      "tempsPath" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesTests.build",
       "wholeModuleOptimization" : false
     }
   },
@@ -126,6 +417,15 @@
       "-c",
       "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/App/AppDelegate.swift",
       "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/App/DockBuddiesApp.swift",
+      "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Models/AgentColor.swift",
+      "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Models/AgentInfo.swift",
+      "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/PixelArt/AgentSprite.swift",
+      "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/PixelArt/PixelGrid.swift",
+      "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Services/CopilotSessionPoller.swift",
+      "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Services/EventStreamParser.swift",
+      "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Services/SQLiteReader.swift",
+      "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Window/DockPositionManager.swift",
+      "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Window/OverlayPanel.swift",
       "-I",
       "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/Modules",
       "-target",
@@ -171,18 +471,144 @@
       "dockbuddies",
       "-driver-use-frontend-path",
       "/Library/Developer/CommandLineTools/usr/bin/swiftc"
+    ],
+    "DockBuddiesPackageTests" : [
+      "/Library/Developer/CommandLineTools/usr/bin/swiftc",
+      "-module-name",
+      "DockBuddiesPackageTests",
+      "-package-name",
+      "dockbuddies",
+      "-c",
+      "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesPackageTests.derived/runner.swift",
+      "-I",
+      "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j8",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesPackageTests.build/include/DockBuddiesPackageTests-Swift.h",
+      "-I",
+      "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+      "-L",
+      "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+      "-plugin-path",
+      "/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "dockbuddies",
+      "-driver-use-frontend-path",
+      "/Library/Developer/CommandLineTools/usr/bin/swiftc"
+    ],
+    "DockBuddiesTests" : [
+      "/Library/Developer/CommandLineTools/usr/bin/swiftc",
+      "-module-name",
+      "DockBuddiesTests",
+      "-package-name",
+      "dockbuddies",
+      "-c",
+      "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Tests/DockBuddiesTests/AgentSpriteTests.swift",
+      "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Tests/DockBuddiesTests/CopilotSessionPollerTests.swift",
+      "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Tests/DockBuddiesTests/DockPositionManagerTests.swift",
+      "-I",
+      "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j8",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-swift-version",
+      "5",
+      "-I",
+      "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+      "-L",
+      "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+      "-plugin-path",
+      "/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "dockbuddies",
+      "-driver-use-frontend-path",
+      "/Library/Developer/CommandLineTools/usr/bin/swiftc"
     ]
   },
   "targetDependencyMap" : {
     "DockBuddies" : [
 
+    ],
+    "DockBuddiesPackageTests" : [
+      "DockBuddiesTests",
+      "DockBuddies"
+    ],
+    "DockBuddiesTests" : [
+      "DockBuddies"
     ]
   },
   "testDiscoveryCommands" : {
 
   },
   "testEntryPointCommands" : {
+    "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesPackageTests.derived/runner.swift" : {
+      "inputs" : [
 
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesPackageTests.derived/runner.swift"
+        }
+      ]
+    }
   },
   "traitConfiguration" : {
     "default" : {
@@ -218,6 +644,42 @@
         {
           "kind" : "file",
           "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/App/DockBuddiesApp.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Models/AgentColor.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Models/AgentInfo.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/PixelArt/AgentSprite.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/PixelArt/PixelGrid.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Services/CopilotSessionPoller.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Services/EventStreamParser.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Services/SQLiteReader.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Window/DockPositionManager.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Window/OverlayPanel.swift"
         }
       ],
       "outputFilePath" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/sources"
@@ -231,14 +693,156 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentColor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentInfo.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentSprite.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AppDelegate.swift.o"
         },
         {
           "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/CopilotSessionPoller.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/DockBuddiesApp.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/DockPositionManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/EventStreamParser.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/OverlayPanel.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/PixelGrid.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/SQLiteReader.swift.o"
         }
       ],
       "outputFilePath" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.product/Objects.LinkFileList"
+    },
+    "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesPackageTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesPackageTests.derived/runner.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesPackageTests.build/sources"
+    },
+    "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesPackageTests.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentColor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentInfo.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentSprite.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AppDelegate.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/CopilotSessionPoller.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/DockBuddiesApp.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/DockPositionManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/EventStreamParser.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/OverlayPanel.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/PixelGrid.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/SQLiteReader.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesPackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesTests.build/AgentSpriteTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesTests.build/CopilotSessionPollerTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesTests.build/DockPositionManagerTests.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesPackageTests.product/Objects.LinkFileList"
+    },
+    "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Tests/DockBuddiesTests/AgentSpriteTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Tests/DockBuddiesTests/CopilotSessionPollerTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Tests/DockBuddiesTests/DockPositionManagerTests.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesTests.build/sources"
     },
     "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt" : {
       "alwaysOutOfDate" : true,

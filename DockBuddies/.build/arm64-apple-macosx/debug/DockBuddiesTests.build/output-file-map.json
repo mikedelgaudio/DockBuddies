@@ -1,0 +1,26 @@
+{
+  "": {
+    "swift-dependencies": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesTests.build/master.swiftdeps"
+  },
+  "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Tests/DockBuddiesTests/AgentSpriteTests.swift": {
+    "dependencies": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesTests.build/AgentSpriteTests.d",
+    "object": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesTests.build/AgentSpriteTests.swift.o",
+    "swiftmodule": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesTests.build/AgentSpriteTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesTests.build/AgentSpriteTests.swiftdeps",
+    "diagnostics": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesTests.build/AgentSpriteTests.dia"
+  },
+  "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Tests/DockBuddiesTests/CopilotSessionPollerTests.swift": {
+    "dependencies": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesTests.build/CopilotSessionPollerTests.d",
+    "object": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesTests.build/CopilotSessionPollerTests.swift.o",
+    "swiftmodule": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesTests.build/CopilotSessionPollerTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesTests.build/CopilotSessionPollerTests.swiftdeps",
+    "diagnostics": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesTests.build/CopilotSessionPollerTests.dia"
+  },
+  "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Tests/DockBuddiesTests/DockPositionManagerTests.swift": {
+    "dependencies": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesTests.build/DockPositionManagerTests.d",
+    "object": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesTests.build/DockPositionManagerTests.swift.o",
+    "swiftmodule": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesTests.build/DockPositionManagerTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesTests.build/DockPositionManagerTests.swiftdeps",
+    "diagnostics": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddiesTests.build/DockPositionManagerTests.dia"
+  }
+}

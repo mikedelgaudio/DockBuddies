@@ -15,5 +15,68 @@
     "swiftmodule": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/DockBuddiesApp~partial.swiftmodule",
     "swift-dependencies": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/DockBuddiesApp.swiftdeps",
     "diagnostics": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/DockBuddiesApp.dia"
+  },
+  "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Models/AgentColor.swift": {
+    "dependencies": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentColor.d",
+    "object": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentColor.swift.o",
+    "swiftmodule": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentColor~partial.swiftmodule",
+    "swift-dependencies": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentColor.swiftdeps",
+    "diagnostics": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentColor.dia"
+  },
+  "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Models/AgentInfo.swift": {
+    "dependencies": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentInfo.d",
+    "object": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentInfo.swift.o",
+    "swiftmodule": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentInfo~partial.swiftmodule",
+    "swift-dependencies": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentInfo.swiftdeps",
+    "diagnostics": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentInfo.dia"
+  },
+  "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/PixelArt/AgentSprite.swift": {
+    "dependencies": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentSprite.d",
+    "object": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentSprite.swift.o",
+    "swiftmodule": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentSprite~partial.swiftmodule",
+    "swift-dependencies": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentSprite.swiftdeps",
+    "diagnostics": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/AgentSprite.dia"
+  },
+  "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/PixelArt/PixelGrid.swift": {
+    "dependencies": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/PixelGrid.d",
+    "object": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/PixelGrid.swift.o",
+    "swiftmodule": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/PixelGrid~partial.swiftmodule",
+    "swift-dependencies": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/PixelGrid.swiftdeps",
+    "diagnostics": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/PixelGrid.dia"
+  },
+  "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Services/CopilotSessionPoller.swift": {
+    "dependencies": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/CopilotSessionPoller.d",
+    "object": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/CopilotSessionPoller.swift.o",
+    "swiftmodule": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/CopilotSessionPoller~partial.swiftmodule",
+    "swift-dependencies": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/CopilotSessionPoller.swiftdeps",
+    "diagnostics": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/CopilotSessionPoller.dia"
+  },
+  "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Services/EventStreamParser.swift": {
+    "dependencies": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/EventStreamParser.d",
+    "object": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/EventStreamParser.swift.o",
+    "swiftmodule": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/EventStreamParser~partial.swiftmodule",
+    "swift-dependencies": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/EventStreamParser.swiftdeps",
+    "diagnostics": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/EventStreamParser.dia"
+  },
+  "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Services/SQLiteReader.swift": {
+    "dependencies": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/SQLiteReader.d",
+    "object": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/SQLiteReader.swift.o",
+    "swiftmodule": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/SQLiteReader~partial.swiftmodule",
+    "swift-dependencies": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/SQLiteReader.swiftdeps",
+    "diagnostics": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/SQLiteReader.dia"
+  },
+  "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Window/DockPositionManager.swift": {
+    "dependencies": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/DockPositionManager.d",
+    "object": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/DockPositionManager.swift.o",
+    "swiftmodule": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/DockPositionManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/DockPositionManager.swiftdeps",
+    "diagnostics": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/DockPositionManager.dia"
+  },
+  "/Users/mikedelgaudio/GitHub/silly/DockBuddies/Sources/DockBuddies/Window/OverlayPanel.swift": {
+    "dependencies": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/OverlayPanel.d",
+    "object": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/OverlayPanel.swift.o",
+    "swiftmodule": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/OverlayPanel~partial.swiftmodule",
+    "swift-dependencies": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/OverlayPanel.swiftdeps",
+    "diagnostics": "/Users/mikedelgaudio/GitHub/silly/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies.build/OverlayPanel.dia"
   }
 }
