@@ -108,7 +108,9 @@ final class CopilotSessionPoller: ObservableObject {
             ))
         }
 
-        return agents.sorted { $0.lastActivity > $1.lastActivity }
+        // Already sorted stably by UUID — don't re-sort by lastActivity
+        // (updated_at changes every poll for active sessions, causing buddy shuffling)
+        return agents
     }
 
     /// Deterministic color from session UUID — same session always gets the same color
