@@ -17,6 +17,14 @@ struct TerminalFocuser {
         "io.alacritty": "Alacritty",
     ]
 
+    /// Check and request Accessibility permission (needed for tab switching).
+    /// Returns true if already trusted.
+    @discardableResult
+    static func ensureAccessibilityPermission(prompt: Bool = true) -> Bool {
+        let options = [kAXTrustedCheckOptionPrompt.takeRetainedValue(): prompt] as CFDictionary
+        return AXIsProcessTrustedWithOptions(options)
+    }
+
     @discardableResult
     static func focusTerminal(forPID pid: Int) -> Bool {
         guard pid > 0 else { return false }
@@ -30,17 +38,28 @@ struct TerminalFocuser {
 
             let appPID = Int(app.processIdentifier)
             if ancestors.contains(appPID) {
+                // Activate the terminal app first
                 app.activate()
 
-                switch bundleId {
-                case "com.apple.Terminal":
-                    focusTerminalAppWindow(pid: pid)
-                case "com.googlecode.iterm2":
-                    focusITermWindow(pid: pid)
-                case "com.mitchellh.ghostty":
-                    focusGhosttyTab(pid: pid, ghosttyPID: appPID)
-                default:
-                    break
+                // Tab switching needs Accessibility — check and prompt
+                let needsTabSwitch = ["com.apple.Terminal", "com.googlecode.iterm2", "com.mitchellh.ghostty"]
+                if needsTabSwitch.contains(bundleId) && !ensureAccessibilityPermission(prompt: true) {
+                    // Permission not yet granted; Ghostty is at least activated
+                    return true
+                }
+
+                // Small delay to let the app become frontmost before sending keystrokes
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
+                    switch bundleId {
+                    case "com.apple.Terminal":
+                        focusTerminalAppWindow(pid: pid)
+                    case "com.googlecode.iterm2":
+                        focusITermWindow(pid: pid)
+                    case "com.mitchellh.ghostty":
+                        focusGhosttyTab(pid: pid, ghosttyPID: appPID)
+                    default:
+                        break
+                    }
                 }
 
                 return true
@@ -86,12 +105,19 @@ struct TerminalFocuser {
 
     // MARK: - Ghostty tab focus
 
+    /// Virtual key codes for number keys 1-9
+    private static let numberKeyCodes: [Int: UInt16] = [
+        1: 0x12, 2: 0x13, 3: 0x14, 4: 0x15, 5: 0x17,
+        6: 0x16, 7: 0x1A, 8: 0x1C, 9: 0x19,
+    ]
+
     /// Finds which Ghostty tab owns the copilot process's TTY and switches to it via Cmd+N.
     private static func focusGhosttyTab(pid: Int, ghosttyPID: Int) {
-        // Get the TTY that the copilot process is running on
         guard let targetTTY = getProcessTTY(pid: pid) else { return }
 
-        // List all processes to find Ghostty's direct children with TTYs (one per tab)
+        // Parse full process table to find Ghostty's direct children with TTYs.
+        // Ghostty spawns: ghostty → /usr/bin/login → /bin/zsh (per tab)
+        // Direct children of Ghostty each have a unique TTY = one tab.
         guard let psOutput = runShellCommand("/bin/ps", args: ["-eo", "pid,ppid,tty"]) else { return }
 
         var tabEntries: [(pid: Int, tty: String)] = []
@@ -111,24 +137,30 @@ struct TerminalFocuser {
         // Sort by PID — earlier PID = earlier tab (tabs are spawned in order)
         tabEntries.sort { $0.pid < $1.pid }
 
-        // Deduplicate by TTY (multiple helper processes may share a TTY)
+        // Deduplicate by TTY
         var seen = Set<String>()
         let uniqueTabs = tabEntries.filter { seen.insert($0.tty).inserted }
 
-        // Find which tab index matches our target TTY
         guard let tabIndex = uniqueTabs.firstIndex(where: { $0.tty == targetTTY }),
               tabIndex + 1 <= 9 else { return }
 
-        // Send Cmd+<number> to switch Ghostty to the correct tab
         let tabNumber = tabIndex + 1
-        let script = """
-        tell application "System Events"
-            tell process "Ghostty"
-                keystroke "\(tabNumber)" using command down
-            end tell
-        end tell
-        """
-        runAppleScript(script)
+        sendCmdNumber(tabNumber, toProcessID: pid_t(ghosttyPID))
+    }
+
+    /// Send Cmd+<number> keystroke to a specific process via CGEvent.
+    private static func sendCmdNumber(_ number: Int, toProcessID processID: pid_t) {
+        guard let keyCode = numberKeyCodes[number],
+              let source = CGEventSource(stateID: .combinedSessionState) else { return }
+
+        guard let keyDown = CGEvent(keyboardEventSource: source, virtualKey: keyCode, keyDown: true),
+              let keyUp = CGEvent(keyboardEventSource: source, virtualKey: keyCode, keyDown: false) else { return }
+
+        keyDown.flags = .maskCommand
+        keyUp.flags = .maskCommand
+
+        keyDown.postToPid(processID)
+        keyUp.postToPid(processID)
     }
 
     // MARK: - Terminal.app tab focus
