@@ -32,25 +32,27 @@ Each buddy represents an active Copilot agent — bouncing, blinking, and displa
 ```bash
 git clone https://github.com/mikedelgaudio/DockBuddies.git
 cd DockBuddies
-swift build
+
+# Option 1: Quick run (for development)
 swift run
+
+# Option 2: Build .app bundle (recommended — Accessibility permission persists)
+make app
+open .build/DockBuddies.app
 ```
 
 The buddies will appear floating above your dock. Look for the 💬 icon in your menu bar.
 
 ### Accessibility Permission (for tab switching)
 
-On first launch, macOS will prompt you to grant Accessibility permission. This is needed to switch terminal tabs when you double-click a buddy.
+Double-clicking a buddy to focus its terminal tab requires Accessibility permission. Using `make app` is recommended because macOS tracks the permission by **bundle ID** — it persists across rebuilds.
 
-1. **System Settings → Privacy & Security → Accessibility**
-2. Click **"+"** at the bottom
-3. Press **Cmd+Shift+G** and paste the binary path:
-   ```
-   /path/to/DockBuddies/.build/arm64-apple-macosx/debug/DockBuddies
-   ```
-4. Toggle it **on**
+1. Run `make app` and then `open .build/DockBuddies.app`
+2. On first double-click, macOS will prompt you to grant Accessibility
+3. Go to **System Settings → Privacy & Security → Accessibility**
+4. Toggle **DockBuddies** on
 
-> **Note:** If you're running via `swift run`, you may need to re-add the binary after rebuilding.
+> **Note:** If you use `swift run` instead, macOS tracks by binary hash — you'll need to re-grant permission after each rebuild.
 
 ## 🎮 Usage
 

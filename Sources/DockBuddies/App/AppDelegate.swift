@@ -14,9 +14,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         setupOverlayPanel()
         poller.startPolling(interval: 2.0)
         observeChanges()
-
-        // Prompt for Accessibility permission on first launch (needed for tab switching)
-        TerminalFocuser.ensureAccessibilityPermission(prompt: true)
     }
 
     func applicationWillTerminate(_ notification: Notification) {

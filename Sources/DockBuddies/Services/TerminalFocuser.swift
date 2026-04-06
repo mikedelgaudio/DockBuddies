@@ -41,11 +41,14 @@ struct TerminalFocuser {
                 // Activate the terminal app first
                 app.activate()
 
-                // Tab switching needs Accessibility — check and prompt
+                // Tab switching needs Accessibility — prompt only on first attempt
                 let needsTabSwitch = ["com.apple.Terminal", "com.googlecode.iterm2", "com.mitchellh.ghostty"]
-                if needsTabSwitch.contains(bundleId) && !ensureAccessibilityPermission(prompt: true) {
-                    // Permission not yet granted; Ghostty is at least activated
-                    return true
+                if needsTabSwitch.contains(bundleId) {
+                    if !ensureAccessibilityPermission(prompt: true) {
+                        // Permission not granted yet; terminal is at least activated.
+                        // The system dialog will guide the user.
+                        return true
+                    }
                 }
 
                 // Small delay to let the app become frontmost before sending keystrokes
