@@ -5,8 +5,9 @@ import Combine
 class AppDelegate: NSObject, NSApplicationDelegate {
     private var statusItem: NSStatusItem?
     private var overlayPanel: OverlayPanel?
+    private var settingsWindow: NSWindow?
     private let dockManager = DockPositionManager()
-    private let poller = CopilotSessionPoller()
+    let poller = CopilotSessionPoller()
     private var cancellables = Set<AnyCancellable>()
 
     func applicationDidFinishLaunching(_ notification: Notification) {
@@ -20,6 +21,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         poller.stopPolling()
     }
 
+    func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+        showSettings()
+        return true
+    }
+
     private func setupStatusBar() {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
         if let button = statusItem?.button {
@@ -28,6 +34,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
 
         let menu = NSMenu()
+        menu.addItem(NSMenuItem(title: "Settings…", action: #selector(openSettings), keyEquivalent: ","))
+        menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "Show/Hide Buddies", action: #selector(toggleOverlay), keyEquivalent: "b"))
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "Quit DockBuddies", action: #selector(quit), keyEquivalent: "q"))
@@ -57,6 +65,33 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 panel.setFrame(frame, display: true, animate: true)
             }
             .store(in: &cancellables)
+    }
+
+    @objc private func openSettings() {
+        showSettings()
+    }
+
+    private func showSettings() {
+        if let settingsWindow, settingsWindow.isVisible {
+            settingsWindow.makeKeyAndOrderFront(nil)
+            NSApp.activate(ignoringOtherApps: true)
+            return
+        }
+
+        let settingsView = SettingsView(poller: poller)
+        let window = NSWindow(
+            contentRect: NSRect(x: 0, y: 0, width: 480, height: 400),
+            styleMask: [.titled, .closable, .miniaturizable],
+            backing: .buffered,
+            defer: false
+        )
+        window.title = "DockBuddies Settings"
+        window.contentView = NSHostingView(rootView: settingsView)
+        window.center()
+        window.isReleasedWhenClosed = false
+        window.makeKeyAndOrderFront(nil)
+        NSApp.activate(ignoringOtherApps: true)
+        settingsWindow = window
     }
 
     @objc private func toggleOverlay() {

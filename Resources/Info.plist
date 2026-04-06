@@ -3,8 +3,6 @@
   "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>LSUIElement</key>
-    <true/>
     <key>CFBundleName</key>
     <string>DockBuddies</string>
     <key>CFBundleIdentifier</key>

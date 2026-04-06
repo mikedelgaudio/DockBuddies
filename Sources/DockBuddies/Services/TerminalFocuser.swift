@@ -114,41 +114,154 @@ struct TerminalFocuser {
         6: 0x16, 7: 0x1A, 8: 0x1C, 9: 0x19,
     ]
 
-    /// Finds which Ghostty tab owns the copilot process's TTY and switches to it via Cmd+N.
+    /// Finds which Ghostty window and tab owns the copilot process's TTY,
+    /// raises the correct window, then switches to the correct tab via Cmd+N.
     private static func focusGhosttyTab(pid: Int, ghosttyPID: Int) {
         guard let targetTTY = getProcessTTY(pid: pid) else { return }
 
-        // Parse full process table to find Ghostty's direct children with TTYs.
-        // Ghostty spawns: ghostty → /usr/bin/login → /bin/zsh (per tab)
-        // Direct children of Ghostty each have a unique TTY = one tab.
+        // Build a map of all Ghostty child processes → TTYs
         guard let psOutput = runShellCommand("/bin/ps", args: ["-eo", "pid,ppid,tty"]) else { return }
 
         var tabEntries: [(pid: Int, tty: String)] = []
-
         for line in psOutput.split(separator: "\n") {
             let parts = line.split(whereSeparator: \.isWhitespace).map(String.init)
             guard parts.count >= 3,
                   let childPID = Int(parts[0]),
                   let ppid = Int(parts[1]) else { continue }
-
             let tty = parts[2]
             if ppid == ghosttyPID && tty != "??" && !tty.isEmpty {
                 tabEntries.append((pid: childPID, tty: tty))
             }
         }
 
-        // Sort by PID — earlier PID = earlier tab (tabs are spawned in order)
         tabEntries.sort { $0.pid < $1.pid }
-
-        // Deduplicate by TTY
         var seen = Set<String>()
         let uniqueTabs = tabEntries.filter { seen.insert($0.tty).inserted }
 
-        guard let tabIndex = uniqueTabs.firstIndex(where: { $0.tty == targetTTY }),
-              tabIndex + 1 <= 9 else { return }
+        // Try AX-based window targeting when we have Accessibility permission.
+        // This handles multiple Ghostty windows correctly.
+        if AXIsProcessTrusted() {
+            let appElement = AXUIElementCreateApplication(pid_t(ghosttyPID))
+            var windowsRef: CFTypeRef?
 
-        let tabNumber = tabIndex + 1
-        sendCmdNumber(tabNumber, toProcessID: pid_t(ghosttyPID))
+            if AXUIElementCopyAttributeValue(appElement, kAXWindowsAttribute as CFString, &windowsRef) == .success,
+               let windows = windowsRef as? [AXUIElement] {
+
+                // Strategy: Count tabs per window using AX, then partition our
+                // global tab list to find which window + local index has our TTY.
+                var windowInfos: [(element: AXUIElement, tabCount: Int)] = []
+
+                for window in windows {
+                    let tabCount = getGhosttyWindowTabCount(window)
+                    if tabCount > 0 {
+                        windowInfos.append((element: window, tabCount: tabCount))
+                    }
+                }
+
+                if !windowInfos.isEmpty {
+                    // Partition global tab list across windows.
+                    // Ghostty windows are ordered newest-first in AX, but tabs within
+                    // each window follow PID creation order. We reverse to match PID order.
+                    windowInfos.reverse()
+
+                    var globalIdx = 0
+                    for info in windowInfos {
+                        for localIdx in 0..<info.tabCount {
+                            if globalIdx < uniqueTabs.count && uniqueTabs[globalIdx].tty == targetTTY {
+                                // Found it! Raise this window, then switch to the local tab.
+                                AXUIElementPerformAction(info.element, kAXRaiseAction as CFString)
+                                if info.tabCount > 1 {
+                                    sendCmdNumber(localIdx + 1, toProcessID: pid_t(ghosttyPID))
+                                }
+                                return
+                            }
+                            globalIdx += 1
+                        }
+                    }
+                }
+
+                // Fallback: if tab counting didn't work, try matching by window title
+                // (Ghostty shows the focused tab's CWD/command in the title)
+                let targetDir = getProcessCWD(pid: pid)
+                for window in windows {
+                    var titleRef: CFTypeRef?
+                    if AXUIElementCopyAttributeValue(window, kAXTitleAttribute as CFString, &titleRef) == .success,
+                       let title = titleRef as? String, !title.isEmpty {
+                        if let dir = targetDir, title.contains(dir) {
+                            AXUIElementPerformAction(window, kAXRaiseAction as CFString)
+                            // Find the local tab index within this window
+                            // (best effort: use global index as fallback)
+                            if let idx = uniqueTabs.firstIndex(where: { $0.tty == targetTTY }), idx + 1 <= 9 {
+                                sendCmdNumber(idx + 1, toProcessID: pid_t(ghosttyPID))
+                            }
+                            return
+                        }
+                    }
+                }
+            }
+        }
+
+        // Fallback: global tab index (works for single-window Ghostty)
+        if let tabIndex = uniqueTabs.firstIndex(where: { $0.tty == targetTTY }), tabIndex + 1 <= 9 {
+            sendCmdNumber(tabIndex + 1, toProcessID: pid_t(ghosttyPID))
+        }
+    }
+
+    /// Count the number of tabs in a Ghostty AX window by inspecting its children.
+    private static func getGhosttyWindowTabCount(_ window: AXUIElement) -> Int {
+        var childrenRef: CFTypeRef?
+        guard AXUIElementCopyAttributeValue(window, kAXChildrenAttribute as CFString, &childrenRef) == .success,
+              let children = childrenRef as? [AXUIElement] else { return 0 }
+
+        // Look for a tab group (standard AX pattern)
+        for child in children {
+            var roleRef: CFTypeRef?
+            AXUIElementCopyAttributeValue(child, kAXRoleAttribute as CFString, &roleRef)
+            if let role = roleRef as? String {
+                if role == "AXTabGroup" {
+                    var tabsRef: CFTypeRef?
+                    if AXUIElementCopyAttributeValue(child, kAXTabsAttribute as CFString, &tabsRef) == .success,
+                       let tabs = tabsRef as? [AXUIElement] {
+                        return tabs.count
+                    }
+                    // Try AXChildren of the tab group
+                    var tabChildrenRef: CFTypeRef?
+                    if AXUIElementCopyAttributeValue(child, kAXChildrenAttribute as CFString, &tabChildrenRef) == .success,
+                       let tabChildren = tabChildrenRef as? [AXUIElement] {
+                        // Count children that look like tabs
+                        var count = 0
+                        for tc in tabChildren {
+                            var tcRoleRef: CFTypeRef?
+                            AXUIElementCopyAttributeValue(tc, kAXRoleAttribute as CFString, &tcRoleRef)
+                            if let tcRole = tcRoleRef as? String,
+                               tcRole == "AXRadioButton" || tcRole == "AXTab" || tcRole == "AXButton" {
+                                count += 1
+                            }
+                        }
+                        if count > 0 { return count }
+                    }
+                }
+            }
+        }
+
+        // Ghostty may not use standard AXTabGroup — assume 1 tab per window
+        // if we can't determine the tab structure
+        return 0
+    }
+
+    /// Get the current working directory of a process
+    private static func getProcessCWD(pid: Int) -> String? {
+        guard let output = runShellCommand("/bin/ps", args: ["-o", "comm=", "-p", "\(pid)"]) else { return nil }
+        // Try lsof to get the cwd
+        guard let lsofOutput = runShellCommand("/usr/sbin/lsof", args: ["-p", "\(pid)", "-Fn", "-d", "cwd"]) else { return nil }
+        for line in lsofOutput.split(separator: "\n") {
+            if line.hasPrefix("n") {
+                let path = String(line.dropFirst())
+                // Return just the last component for matching
+                return URL(fileURLWithPath: path).lastPathComponent
+            }
+        }
+        return nil
     }
 
     /// Send Cmd+<number> keystroke to a specific process via CGEvent.
