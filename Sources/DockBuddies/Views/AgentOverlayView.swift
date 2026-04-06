@@ -9,12 +9,16 @@ struct AgentOverlayView: View {
         HStack(spacing: 20) {
             ForEach(Array(displayAgents.enumerated()), id: \.element.id) { index, agent in
                 AgentBuddyView(agent: agent, index: index)
-                    .onTapGesture(count: 2) {
-                        TerminalFocuser.focusTerminal(forPID: agent.pid)
-                    }
-                    .onTapGesture(count: 1) {
-                        selectedAgent = (selectedAgent?.id == agent.id) ? nil : agent
-                    }
+                    .overlay(
+                        ClickInterceptor(
+                            onSingleClick: {
+                                selectedAgent = (selectedAgent?.id == agent.id) ? nil : agent
+                            },
+                            onDoubleClick: {
+                                TerminalFocuser.focusTerminal(forPID: agent.pid)
+                            }
+                        )
+                    )
                     .popover(
                         isPresented: Binding(
                             get: { selectedAgent?.id == agent.id },
@@ -50,6 +54,57 @@ struct AgentOverlayView: View {
     }
 }
 
+// MARK: - Instant double-click via NSView (no SwiftUI gesture delay)
+
+/// Intercepts mouse clicks at the AppKit level so double-click fires
+/// on the second mouseDown — no 300ms disambiguation delay.
+struct ClickInterceptor: NSViewRepresentable {
+    let onSingleClick: () -> Void
+    let onDoubleClick: () -> Void
+
+    func makeNSView(context: Context) -> ClickInterceptorNSView {
+        let view = ClickInterceptorNSView()
+        view.onSingleClick = onSingleClick
+        view.onDoubleClick = onDoubleClick
+        return view
+    }
+
+    func updateNSView(_ nsView: ClickInterceptorNSView, context: Context) {
+        nsView.onSingleClick = onSingleClick
+        nsView.onDoubleClick = onDoubleClick
+    }
+}
+
+final class ClickInterceptorNSView: NSView {
+    var onSingleClick: (() -> Void)?
+    var onDoubleClick: (() -> Void)?
+    private var singleClickTimer: Timer?
+
+    override func mouseDown(with event: NSEvent) {
+        if event.clickCount == 2 {
+            // Cancel pending single-click and fire double-click immediately
+            singleClickTimer?.invalidate()
+            singleClickTimer = nil
+            onDoubleClick?()
+        }
+    }
+
+    override func mouseUp(with event: NSEvent) {
+        if event.clickCount == 1 {
+            // Defer single-click to allow double-click detection
+            singleClickTimer?.invalidate()
+            singleClickTimer = Timer.scheduledTimer(
+                withTimeInterval: NSEvent.doubleClickInterval,
+                repeats: false
+            ) { [weak self] _ in
+                self?.onSingleClick?()
+            }
+        }
+    }
+}
+
+// MARK: - Agent buddy
+
 struct AgentBuddyView: View {
     let agent: AgentInfo
     let index: Int
@@ -84,7 +139,6 @@ struct AgentBuddyView: View {
                 appear = true
             }
         }
-        // Accessibility
         .accessibilityElement(children: .combine)
         .accessibilityLabel(agent.accessibilityDescription)
         .accessibilityHint("Click to view details. Double-click to focus terminal.")

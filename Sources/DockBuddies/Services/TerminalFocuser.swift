@@ -3,10 +3,9 @@ import Foundation
 
 /// Finds and focuses the terminal window that is running a given process.
 /// Walks up the process tree from a PID to find the parent terminal app,
-/// then activates that app's window.
+/// then activates that app's window and switches to the correct tab.
 struct TerminalFocuser {
 
-    /// Known terminal bundle identifiers mapped to display names
     private static let knownTerminals: [String: String] = [
         "com.apple.Terminal": "Terminal",
         "com.googlecode.iterm2": "iTerm2",
@@ -18,16 +17,11 @@ struct TerminalFocuser {
         "io.alacritty": "Alacritty",
     ]
 
-    /// Attempt to focus the terminal running the given PID.
-    /// Returns true if a terminal was found and activated.
     @discardableResult
     static func focusTerminal(forPID pid: Int) -> Bool {
         guard pid > 0 else { return false }
 
-        // Walk up the process tree to find a terminal ancestor
         let ancestors = getAncestorPIDs(of: pid)
-
-        // Check each running app against our ancestor PIDs
         let runningApps = NSWorkspace.shared.runningApplications
 
         for app in runningApps {
@@ -36,30 +30,33 @@ struct TerminalFocuser {
 
             let appPID = Int(app.processIdentifier)
             if ancestors.contains(appPID) {
-                // Found the terminal — activate it
                 app.activate()
 
-                // For Terminal.app, try to focus the specific tab via AppleScript
-                if bundleId == "com.apple.Terminal" {
+                switch bundleId {
+                case "com.apple.Terminal":
                     focusTerminalAppWindow(pid: pid)
-                } else if bundleId == "com.googlecode.iterm2" {
+                case "com.googlecode.iterm2":
                     focusITermWindow(pid: pid)
+                case "com.mitchellh.ghostty":
+                    focusGhosttyTab(pid: pid, ghosttyPID: appPID)
+                default:
+                    break
                 }
 
                 return true
             }
         }
 
-        // Fallback: check if any terminal has a child matching our PID's session
         return focusTerminalByProcessGroup(pid: pid)
     }
 
-    /// Walk up the process tree and collect all ancestor PIDs.
+    // MARK: - Process tree walking
+
     private static func getAncestorPIDs(of pid: Int) -> Set<Int> {
         var ancestors = Set<Int>()
         var current = pid
 
-        for _ in 0..<50 { // safety limit
+        for _ in 0..<50 {
             let parent = getParentPID(of: current)
             if parent <= 1 || ancestors.contains(parent) { break }
             ancestors.insert(parent)
@@ -69,7 +66,6 @@ struct TerminalFocuser {
         return ancestors
     }
 
-    /// Get the parent PID of a process using sysctl.
     private static func getParentPID(of pid: Int) -> Int {
         var info = kinfo_proc()
         var size = MemoryLayout<kinfo_proc>.stride
@@ -81,22 +77,75 @@ struct TerminalFocuser {
         return Int(info.kp_eproc.e_ppid)
     }
 
-    /// For Terminal.app: use AppleScript to find and focus the window/tab with our process.
+    /// Get the TTY name for a process (e.g. "ttys004")
+    private static func getProcessTTY(pid: Int) -> String? {
+        guard let output = runShellCommand("/bin/ps", args: ["-o", "tty=", "-p", "\(pid)"]) else { return nil }
+        let tty = output.trimmingCharacters(in: .whitespacesAndNewlines)
+        return (tty.isEmpty || tty == "??") ? nil : tty
+    }
+
+    // MARK: - Ghostty tab focus
+
+    /// Finds which Ghostty tab owns the copilot process's TTY and switches to it via Cmd+N.
+    private static func focusGhosttyTab(pid: Int, ghosttyPID: Int) {
+        // Get the TTY that the copilot process is running on
+        guard let targetTTY = getProcessTTY(pid: pid) else { return }
+
+        // List all processes to find Ghostty's direct children with TTYs (one per tab)
+        guard let psOutput = runShellCommand("/bin/ps", args: ["-eo", "pid,ppid,tty"]) else { return }
+
+        var tabEntries: [(pid: Int, tty: String)] = []
+
+        for line in psOutput.split(separator: "\n") {
+            let parts = line.split(whereSeparator: \.isWhitespace).map(String.init)
+            guard parts.count >= 3,
+                  let childPID = Int(parts[0]),
+                  let ppid = Int(parts[1]) else { continue }
+
+            let tty = parts[2]
+            if ppid == ghosttyPID && tty != "??" && !tty.isEmpty {
+                tabEntries.append((pid: childPID, tty: tty))
+            }
+        }
+
+        // Sort by PID — earlier PID = earlier tab (tabs are spawned in order)
+        tabEntries.sort { $0.pid < $1.pid }
+
+        // Deduplicate by TTY (multiple helper processes may share a TTY)
+        var seen = Set<String>()
+        let uniqueTabs = tabEntries.filter { seen.insert($0.tty).inserted }
+
+        // Find which tab index matches our target TTY
+        guard let tabIndex = uniqueTabs.firstIndex(where: { $0.tty == targetTTY }),
+              tabIndex + 1 <= 9 else { return }
+
+        // Send Cmd+<number> to switch Ghostty to the correct tab
+        let tabNumber = tabIndex + 1
+        let script = """
+        tell application "System Events"
+            tell process "Ghostty"
+                keystroke "\(tabNumber)" using command down
+            end tell
+        end tell
+        """
+        runAppleScript(script)
+    }
+
+    // MARK: - Terminal.app tab focus
+
     private static func focusTerminalAppWindow(pid: Int) {
         let script = """
         tell application "Terminal"
             activate
-            set targetTab to missing value
             repeat with w in windows
                 repeat with t in tabs of w
                     try
                         set tabProcesses to processes of t
                         repeat with p in tabProcesses
                             if p contains "\(pid)" then
-                                set targetTab to t
                                 set selected of t to true
                                 set index of w to 1
-                                exit repeat
+                                return
                             end if
                         end repeat
                     end try
@@ -107,7 +156,8 @@ struct TerminalFocuser {
         runAppleScript(script)
     }
 
-    /// For iTerm2: use AppleScript to find the session running our process.
+    // MARK: - iTerm2 tab focus
+
     private static func focusITermWindow(pid: Int) {
         let script = """
         tell application "iTerm2"
@@ -134,20 +184,16 @@ struct TerminalFocuser {
         runAppleScript(script)
     }
 
-    /// Fallback: find terminal by process group — if the copilot process shares a
-    /// process group with a terminal's child, activate that terminal.
+    // MARK: - Fallback
+
     private static func focusTerminalByProcessGroup(pid: Int) -> Bool {
-        // Get the process group of our target PID
         let pgid = getpgid(Int32(pid))
         guard pgid > 0 else { return false }
 
-        // Check each running terminal app
         let runningApps = NSWorkspace.shared.runningApplications
         for app in runningApps {
             guard let bundleId = app.bundleIdentifier,
                   knownTerminals.keys.contains(bundleId) else { continue }
-
-            // Activate the first terminal we find as a last resort
             app.activate()
             return true
         }
@@ -155,9 +201,24 @@ struct TerminalFocuser {
         return false
     }
 
+    // MARK: - Helpers
+
     private static func runAppleScript(_ source: String) {
         guard let script = NSAppleScript(source: source) else { return }
         var error: NSDictionary?
         script.executeAndReturnError(&error)
+    }
+
+    private static func runShellCommand(_ path: String, args: [String]) -> String? {
+        let process = Process()
+        process.executableURL = URL(fileURLWithPath: path)
+        process.arguments = args
+        let pipe = Pipe()
+        process.standardOutput = pipe
+        process.standardError = Pipe()
+        try? process.run()
+        process.waitUntilExit()
+        let data = pipe.fileHandleForReading.readDataToEndOfFile()
+        return String(data: data, encoding: .utf8)
     }
 }
