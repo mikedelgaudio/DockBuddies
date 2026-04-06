@@ -5,16 +5,24 @@ struct AgentOverlayView: View {
 
     @State private var selectedAgent: AgentInfo?
 
+    @State private var flashingAgentId: String?
+
     var body: some View {
         HStack(spacing: 20) {
             ForEach(Array(displayAgents.enumerated()), id: \.element.id) { index, agent in
-                AgentBuddyView(agent: agent, index: index)
+                AgentBuddyView(agent: agent, index: index, isFlashing: flashingAgentId == agent.id)
                     .overlay(
                         ClickInterceptor(
                             onSingleClick: {
                                 selectedAgent = (selectedAgent?.id == agent.id) ? nil : agent
                             },
                             onDoubleClick: {
+                                // Flash feedback
+                                flashingAgentId = agent.id
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
+                                    flashingAgentId = nil
+                                }
+                                // Focus terminal
                                 TerminalFocuser.focusTerminal(forPID: agent.pid)
                             }
                         )
@@ -108,6 +116,7 @@ final class ClickInterceptorNSView: NSView {
 struct AgentBuddyView: View {
     let agent: AgentInfo
     let index: Int
+    var isFlashing: Bool = false
 
     @State private var appear = false
     @State private var isHovered = false
@@ -125,6 +134,14 @@ struct AgentBuddyView: View {
         .scaleEffect(isHovered ? 1.15 : 1.0)
         .shadow(color: isHovered ? (agent.color.palette[.body] ?? .white).opacity(0.6) : .clear,
                 radius: isHovered ? 8 : 0)
+        // Double-click flash: bright overlay that fades out
+        .overlay(
+            RoundedRectangle(cornerRadius: 6)
+                .fill(Color.white)
+                .opacity(isFlashing ? 0.6 : 0)
+                .animation(.easeOut(duration: 0.3), value: isFlashing)
+                .allowsHitTesting(false)
+        )
         .animation(.easeOut(duration: 0.15), value: isHovered)
         .onHover { hovering in
             isHovered = hovering
