@@ -32,4 +32,17 @@ struct AgentInfo: Identifiable, Equatable {
         lhs.statusText == rhs.statusText &&
         lhs.turnCount == rhs.turnCount
     }
+
+    /// VoiceOver-friendly description of this agent
+    var accessibilityDescription: String {
+        var parts = ["\(color.rawValue) agent"]
+        parts.append("status: \(statusText)")
+        if let repo = repository, !repo.isEmpty {
+            parts.append("repository: \(repo)")
+        }
+        if !summary.isEmpty {
+            parts.append(summary)
+        }
+        return parts.joined(separator: ", ")
+    }
 }

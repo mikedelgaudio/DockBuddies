@@ -9,7 +9,10 @@ struct AgentOverlayView: View {
         HStack(spacing: 20) {
             ForEach(Array(displayAgents.enumerated()), id: \.element.id) { index, agent in
                 AgentBuddyView(agent: agent, index: index)
-                    .onTapGesture {
+                    .onTapGesture(count: 2) {
+                        TerminalFocuser.focusTerminal(forPID: agent.pid)
+                    }
+                    .onTapGesture(count: 1) {
                         selectedAgent = (selectedAgent?.id == agent.id) ? nil : agent
                     }
                     .popover(
@@ -52,6 +55,7 @@ struct AgentBuddyView: View {
     let index: Int
 
     @State private var appear = false
+    @State private var isHovered = false
 
     var body: some View {
         VStack(spacing: 2) {
@@ -63,10 +67,27 @@ struct AgentBuddyView: View {
                 .scaleEffect(appear ? 1 : 0.5)
                 .opacity(appear ? 1 : 0)
         }
+        .scaleEffect(isHovered ? 1.15 : 1.0)
+        .shadow(color: isHovered ? (agent.color.palette[.body] ?? .white).opacity(0.6) : .clear,
+                radius: isHovered ? 8 : 0)
+        .animation(.easeOut(duration: 0.15), value: isHovered)
+        .onHover { hovering in
+            isHovered = hovering
+            if hovering {
+                NSCursor.pointingHand.push()
+            } else {
+                NSCursor.pop()
+            }
+        }
         .onAppear {
             withAnimation(.spring(response: 0.6, dampingFraction: 0.7).delay(Double(index) * 0.15)) {
                 appear = true
             }
         }
+        // Accessibility
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel(agent.accessibilityDescription)
+        .accessibilityHint("Click to view details. Double-click to focus terminal.")
+        .accessibilityAddTraits(.isButton)
     }
 }

@@ -38,6 +38,20 @@ struct AgentDetailPopover: View {
             }
             .font(.system(size: 9, design: .monospaced))
             .foregroundColor(.secondary)
+
+            if agent.pid > 0 {
+                Divider()
+
+                Button(action: {
+                    TerminalFocuser.focusTerminal(forPID: agent.pid)
+                }) {
+                    Label("Focus Terminal", systemImage: "terminal.fill")
+                        .frame(maxWidth: .infinity)
+                }
+                .buttonStyle(.borderedProminent)
+                .controlSize(.small)
+                .accessibilityHint("Switches to the terminal window running this agent")
+            }
         }
         .padding(12)
         .frame(width: 280)
