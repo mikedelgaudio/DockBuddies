@@ -19,40 +19,106 @@ Each buddy represents an active Copilot agent — bouncing, blinking, and displa
 - **Menu-bar only** — No dock icon; lives in your menu bar with a toggle shortcut
 - **Accessible** — Full VoiceOver support with labels, hints, and button traits
 
-## 🚀 Getting Started
+## 🚀 Install
+
+### Requirements
+
+- macOS 14.0 (Sonoma) or later — works on both Apple Silicon and Intel
+- [GitHub Copilot CLI](https://githubnext.com/projects/copilot-cli) installed and running (optional, but you won't see any buddies without active sessions)
+
+### From the latest release (recommended)
+
+1. Go to [**Releases**](https://github.com/mikedelgaudio/DockBuddies/releases/latest) and download `DockBuddies-X.Y.Z.dmg`.
+2. Open the `.dmg`. A window appears with **DockBuddies.app** and an **Applications** shortcut.
+3. **Drag `DockBuddies.app` onto `Applications`.**
+4. Eject the disk image, then launch DockBuddies from Launchpad / Spotlight / `/Applications`.
+
+> **First launch — Gatekeeper warning.** The release `.app` is ad-hoc signed, not notarized
+> by Apple. The first time you open it, macOS will say *"DockBuddies cannot be opened because
+> the developer cannot be verified."* Right-click (or Control-click) the app in Finder and
+> choose **Open** — accept the prompt once and the warning won't appear again.
+
+### Accessibility permission (for tab switching)
+
+Double-clicking a buddy to focus its terminal tab requires the Accessibility permission.
+
+1. Double-click any buddy. macOS will prompt you to grant Accessibility.
+2. Open **System Settings → Privacy & Security → Accessibility**.
+3. Toggle **DockBuddies** on.
+
+The permission is tracked by bundle ID, so it persists across version upgrades — you only
+grant it once.
+
+## 🧹 Uninstall
+
+DockBuddies stores nothing on your system other than the app bundle and an Accessibility
+entry. To remove it completely:
+
+1. Quit DockBuddies (menu bar → **Quit**).
+2. Drag `/Applications/DockBuddies.app` to the Trash.
+3. Open **System Settings → Privacy & Security → Accessibility**, select **DockBuddies**, and click the **−** button to revoke the permission.
+
+That's it — there are no caches, preferences, or launch agents to clean up.
+
+## 🛠️ Build from source
 
 ### Requirements
 
 - macOS 14.0+
-- Swift 5.9+
-- [GitHub Copilot CLI](https://githubnext.com/projects/copilot-cli) installed and running
+- Swift 5.9+ (Xcode 15 or Command Line Tools — full Xcode is required for **universal** builds)
 
-### Build & Run
+### Quick development loop
 
 ```bash
 git clone https://github.com/mikedelgaudio/DockBuddies.git
 cd DockBuddies
 
-# Option 1: Quick run (for development)
-swift run
+# Run directly (debug, fastest iteration)
+make run
 
-# Option 2: Build .app bundle (recommended — Accessibility permission persists)
+# Or build a debug .app at .build/DockBuddies.app
 make app
 open .build/DockBuddies.app
 ```
 
-The buddies will appear floating above your dock. Look for the 💬 icon in your menu bar.
+The Accessibility permission for `make app` is tracked by bundle ID at the
+`.build/` path, so it survives rebuilds during development.
 
-### Accessibility Permission (for tab switching)
+### Build a release .app and .dmg
 
-Double-clicking a buddy to focus its terminal tab requires Accessibility permission. Using `make app` is recommended because macOS tracks the permission by **bundle ID** — it persists across rebuilds.
+```bash
+make dmg
+```
 
-1. Run `make app` and then `open .build/DockBuddies.app`
-2. On first double-click, macOS will prompt you to grant Accessibility
-3. Go to **System Settings → Privacy & Security → Accessibility**
-4. Toggle **DockBuddies** on
+This runs the two scripts under `scripts/`:
 
-> **Note:** If you use `swift run` instead, macOS tracks by binary hash — you'll need to re-grant permission after each rebuild.
+| Script | Output |
+|--------|--------|
+| `scripts/build-app.sh` | `dist/DockBuddies.app` (release, ad-hoc signed; universal when full Xcode is installed, otherwise host-arch) |
+| `scripts/build-dmg.sh` | `dist/DockBuddies.dmg` (drag-to-install layout) |
+
+The `dist/` directory is git-ignored — release artifacts are **never** committed; they are only
+published as GitHub Release assets by the workflow described below.
+
+### Cutting a release
+
+Releases are produced by [`.github/workflows/release.yml`](.github/workflows/release.yml) on
+the `macos-14` runner (which has full Xcode, so the `.dmg` it ships is a true arm64 + x86_64
+universal binary).
+
+```bash
+# 1. Tag the commit you want to release.
+git tag v1.2.3
+git push origin v1.2.3
+
+# 2. The Release workflow will:
+#    - build dist/DockBuddies-1.2.3.dmg with the version stamped into Info.plist
+#    - publish a GitHub Release with auto-generated notes and the .dmg attached
+```
+
+You can also trigger the workflow manually from the **Actions** tab (`workflow_dispatch`)
+to test the build without cutting a public release — the `.dmg` is uploaded as a workflow
+artifact instead.
 
 ## 🎮 Usage
 

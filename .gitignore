@@ -4,3 +4,7 @@
 xcuserdata/
 DerivedData/
 .DS_Store
+
+# Release artifacts — built locally or in CI, never committed.
+# Distribution happens via GitHub Releases.
+dist/

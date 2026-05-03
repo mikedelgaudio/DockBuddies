@@ -1,0 +1,75 @@
+name: Release
+
+# Cuts a GitHub Release with a DockBuddies-<version>.dmg whenever a tag of the
+# form vX.Y.Z is pushed.
+#
+#   git tag v1.2.3
+#   git push origin v1.2.3
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to build (e.g. 1.2.3) — for manual test runs'
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: macos-14
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Resolve version
+        id: version
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            VERSION="${{ github.event.inputs.version }}"
+          else
+            # Strip the leading "v" from the tag (refs/tags/v1.2.3 -> 1.2.3).
+            VERSION="${GITHUB_REF_NAME#v}"
+          fi
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "Building DockBuddies $VERSION"
+
+      - name: Show toolchain
+        run: |
+          swift --version
+          xcodebuild -version
+
+      - name: Build .app
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: ./scripts/build-app.sh
+
+      - name: Build .dmg
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: ./scripts/build-dmg.sh
+
+      - name: Verify artifact
+        run: |
+          ls -lh dist/
+          codesign --verify --verbose dist/DockBuddies.app
+
+      - name: Upload artifact (manual runs only)
+        if: github.event_name == 'workflow_dispatch'
+        uses: actions/upload-artifact@v4
+        with:
+          name: DockBuddies-${{ steps.version.outputs.version }}-dmg
+          path: dist/DockBuddies-${{ steps.version.outputs.version }}.dmg
+
+      - name: Publish GitHub Release
+        if: github.event_name == 'push'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/DockBuddies-${{ steps.version.outputs.version }}.dmg
+          generate_release_notes: true
+          draft: false
+          prerelease: false
