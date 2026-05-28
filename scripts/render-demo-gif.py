@@ -180,8 +180,7 @@ def draw_bubble(draw, cx, bottom_y, text, font):
     bx = cx - bw // 2
     by = bottom_y - TRIANGLE_H - bh
 
-    # Rounded rect body
-    bubble_color = (0, 0, 0, 220)
+    bubble_color = (15, 15, 15)
     draw_rounded_rect(draw, (bx, by, bx + bw, by + bh), BUBBLE_CORNER, fill=bubble_color)
 
     # Triangle pointer
@@ -197,17 +196,17 @@ def draw_bubble(draw, cx, bottom_y, text, font):
     # Text
     tx = bx + BUBBLE_PAD_H
     ty = by + BUBBLE_PAD_V
-    draw.text((tx, ty), text, fill=(255, 255, 255, 255), font=font)
+    draw.text((tx, ty), text, fill=(255, 255, 255), font=font)
 
 
 def draw_dock_bar(draw, y, width, height):
-    """Draw a semi-transparent rounded dock bar."""
+    """Draw a rounded dock bar."""
     margin = DOCK_MARGIN
     draw_rounded_rect(
         draw,
         (margin, y, width - margin, y + height),
         radius=6,
-        fill=(40, 40, 40, 180),
+        fill=(50, 50, 50),
     )
 
 
@@ -257,7 +256,7 @@ def render_gif(output_path="Resources/demo.gif"):
 
     for frame_i in range(TOTAL_FRAMES):
         t = frame_i / FPS
-        img = Image.new("RGBA", (canvas_w, canvas_h), (30, 30, 30, 255))
+        img = Image.new("RGB", (canvas_w, canvas_h), (30, 30, 30))
         draw = ImageDraw.Draw(img)
 
         # Dock bar
@@ -298,7 +297,7 @@ def render_gif(output_path="Resources/demo.gif"):
         append_images=frames[1:],
         duration=FRAME_MS,
         loop=0,
-        optimize=True,
+        optimize=False,
     )
     print(f"✅ Wrote {output_path} ({len(frames)} frames, {canvas_w}×{canvas_h}px)")
 
