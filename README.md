@@ -4,7 +4,7 @@ Cute pixel-art agents that sit on your macOS dock, showing live status of your [
 
 Each buddy represents an active Copilot agent — bouncing, blinking, and displaying what it's doing in real time (EDITING, SEARCHING, THINKING, etc.). Double-click any buddy to instantly jump to the terminal tab running that session.
 
-![DockBuddies Demo](https://github.com/mikedelgaudio/DockBuddies/blob/main/Resources/demo.png?raw=true)
+![DockBuddies Demo](https://github.com/mikedelgaudio/DockBuddies/blob/main/Resources/demo.gif?raw=true)
 
 ## ✨ Features
 
